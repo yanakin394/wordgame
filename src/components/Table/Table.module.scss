@@ -1,0 +1,16 @@
+@import '../../style/vars.scss';
+
+.table{
+    border-collapse: collapse;
+    margin: auto;
+    border: 2px solid $main-color;
+}
+td, th{
+    border: 2px solid $main-color;
+    color: $main-color;
+    padding: 0.5rem;
+    text-align: center;
+}
+th {
+    background-color: $bg-color;
+}
