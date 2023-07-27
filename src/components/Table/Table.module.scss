@@ -11,19 +11,31 @@
     font-size: 1.5rem;
     font-weight: bolder;
 }
-td, th{
+.col__title,
+.row,
+.row__btns{
     border: 2px solid $main-color;
     color: $main-color;
     padding: 0.5rem;
     text-align: center;
 }
-.col_title {
+.col__title {
     background-color: $bg-color;
 }
-.td{
-    background-color: white;
-}
+/* .row__btns{
+    display: flex;
+    border-style: hidden;
+} */
 .edit__btn,
 .del__btn{
     width: 2rem;
+    padding: 1rem auto;
+}
+.edit__btn:hover,
+.del__btn:hover {
+    opacity: 0.5;
+}
+.edit__btn:active ,
+.del__btn:active {
+    transform: scale(0.95);
 }

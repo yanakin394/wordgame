@@ -1,0 +1,58 @@
+@import '../../style/vars.scss';
+
+.header__wrapper {
+    width: 100%;
+    height: 100px;
+    background-color: $bg-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header__title_wrapper{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.header__title,
+.header__motto{
+    margin:  0 0 0 3%;
+    color: $main-color;
+    font-family: $title-font;
+}
+.header__title{
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.header__motto {
+    font-size: 1rem;
+    margin-left: 10%;
+}
+.nav{
+    width:50%;
+}
+.nav__list{
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nav__item,
+.nav__item_game{
+    color: $main-color;
+    font-family: $title-font;
+    font-size: 1.5rem;
+    list-style-type: none;
+    text-decoration:none;
+}
+
+.nav__item_game{
+    font-size: 2rem;
+}
+.nav__item_game:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}

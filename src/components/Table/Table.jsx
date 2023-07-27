@@ -6,26 +6,25 @@ import deleteBtn from '../../assets/icons/delete.png';
 function Table() {
     return (
         <table className={style.table}>
-            <caption className={style.table__title}>Word List</caption>
+            <caption className={style.table__title}>Список слов</caption>
             <thead>
                 <tr>
-                    <th className={style.col_title}>English</th>
-                    <th className={style.col_title}>Transcription</th>
-                    <th className={style.col_title}>Translation</th>
-                    <th className={style.col_title}>Edit/Delete</th>
+                    <th className={style.col__title}>English</th>
+                    <th className={style.col__title}>Транскрипция</th>
+                    <th className={style.col__title}>Перевод</th>
+                    <th className={style.col__title}>Редактировать/Удалить</th>
                 </tr>
             </thead>
-            <tbody> {wordsArr.map((item, index) => (
+            <tbody>{wordsArr.map((item, index) => (
                 <tr key={index}>
-                    <th className={style.td}>{item.english}</th>
-                    <th className={style.td}>{item.transcription}</th>
-                    <th className={style.td}>{item.russian}</th>
-                    <th className={style.td}>
+                    <th className={style.row}>{item.english}</th>
+                    <th className={style.row}>{item.transcription}</th>
+                    <th className={style.row}>{item.russian}</th>
+                    <th className={style.row__btns}>
                         <img src={editBtn} alt="edit" className={style.edit__btn}/>
                         <img src={deleteBtn} alt="button" className={style.del__btn}/>
                     </th>
-                </tr>
-                ))}
+                </tr>))}
             </tbody>
         </table>
     );

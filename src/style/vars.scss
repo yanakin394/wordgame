@@ -1,2 +1,12 @@
+@font-face {
+    font-family: 'Caveat';
+    src: local('Caveat'),
+        url('../assets/fonts/Caveat.ttf') format('truetype');
+    font-weight: bold;
+}
+
+//colors
 $bg-color: rgb(104, 243, 197);
 $main-color: rgb(13, 128, 103);
+//fonts
+$title-font: 'Caveat';
