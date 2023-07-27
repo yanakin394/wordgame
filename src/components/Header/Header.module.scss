@@ -3,7 +3,9 @@
 .header__wrapper {
     width: 100%;
     height: 100px;
-    background-color: $bg-color;
+    background: rgb(38,173,126);
+    background: linear-gradient(0deg, rgba(38,173,126,0.4962359943977591) 0%, rgba(138,254,138,1) 100%);
+/*     background-color: $bg-color; */
     display: flex;
     flex-direction: row;
     align-items: center;
