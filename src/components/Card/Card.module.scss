@@ -2,18 +2,6 @@
 @import '../../style/templates.scss';
 
 .card{
-    width: 340px;
-    height: 480px;
-}
-.card__flipper{
-
-}
-.card__rule{
-    @include txt-style;
-}
-.card__front,
-.card__back{
-    
     background-color: rgb(202, 252, 235);
     margin: 2rem auto;
     width: 500px;
@@ -22,29 +10,36 @@
     border-radius: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
-/* .card__front{
-    transform: perspective(600px) rotateY(0deg);
-}
-.card__back{
-    transform: perspective(600px) rotateY(180deg);
-    background-color: #f1f1f1;
-}
-.card:hover > .card.__front{
-    transform: perspective(600px) rotateY(-180deg);
-}
-.card:hover > .card__back{
-    transform: perspective(600px) rotateY(0deg);
-} */
 .card__word,
 .card__translation{
     margin: 0;
     @include txt-style;
     font-size: 5rem;
 }
+.card__word{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 .card__transcription{
+    margin: 0 auto;
     @include txt-style;
-    font-size: 3rem;
+    font-size: 2rem;
+}
+.card__button{
+    font-size: 1.25rem;
+    padding: 2%;
+    color: white;
+    background-color: $main-color;
+    border-style: none;
+    border-radius: 25px;
+    width: fit-content;
+}
+.card__button:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
 }
