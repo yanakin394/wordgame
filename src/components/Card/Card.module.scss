@@ -1,11 +1,15 @@
 @import '../../style/vars.scss';
 @import '../../style/templates.scss';
-
 .card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card__wrapper{
     background-color: rgb(202, 252, 235);
     margin: 2rem auto;
-    width: 500px;
-    height: 300px;
+    width: 250px;
+    height: 200px;
     border: 2px solid $main-color;
     border-radius: 25px;
     display: flex;
@@ -17,7 +21,7 @@
 .card__translation{
     margin: 0;
     @include txt-style;
-    font-size: 5rem;
+    font-size: 3rem;
 }
 .card__word{
     display: flex;
@@ -28,11 +32,11 @@
 .card__transcription{
     margin: 0 auto;
     @include txt-style;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 .card__button{
-    font-size: 1.25rem;
-    padding: 2%;
+    font-size: 1rem;
+    padding: 3%;
     color: white;
     background-color: $main-color;
     border-style: none;
