@@ -1,21 +1,37 @@
+import { useState } from 'react';
 import wordsArr from '../data/words.json';
 import style from './Card.module.scss';
 
-function Card() {
-    return (
-        
-        <div className={style.card}>{wordsArr.map((wordItem, index) => (
-            <div className={style.card__wrapper} key={index}>
-                <div className={style.card__word}>
-                    <p className={style.card__word}>{wordItem.english}</p>
-                    <p className={style.card__transcription}>{wordItem.transcription}</p>
-                </div>
-                <button className={style.card__button}>Проверить</button>
-                {/* <p className={style.card__translation}>{wordItem.russian}</p> */}
-            </div>
-            ))}
-        </div>       
-    );
+export default function Card() {
+    const [clicked, setClicked] = useState(false);
+    const handleClick = () => {
+        setClicked();
+    }
+    {
+        if (clicked === false) {
+            return (        
+                <div className={style.card}>
+                    <div className={style.card__wrapper}>
+                        <div className={style.card__word}>
+                            <p className={style.card__word}>{wordsArr[0].english}</p>
+                            <p className={style.card__transcription}>{wordsArr[0].transcription}</p>
+                        </div>
+                        <button className={style.card__button} onClick={() => handleClick}>Проверить</button>                        
+                    </div>
+                </div>       
+            );
+        } else {   
+            return (        
+                <div className={style.card}>
+                    <div className={style.card__wrapper}>
+                        <div className={style.card__word}>
+                            <p className={style.card__word}>{wordsArr[0].english}</p>
+                            <p className={style.card__transcription}>{wordsArr[0].transcription}</p>
+                        </div>
+                        <p className={style.card__translation}>{wordsArr[0].russian}</p>
+                    </div>
+                </div>       
+            );
+        } 
+    }
 }
-
-export default Card;
