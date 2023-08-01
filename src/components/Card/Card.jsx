@@ -3,7 +3,7 @@ import wordsArr from '../data/words.json';
 import style from './Card.module.scss';
 
 export default function Card(props) {
-    console.log(props.english);
+    console.log(props);
     const [clicked, setClicked] = useState(false);
     const handleClick = () => {
         setClicked(!clicked);
