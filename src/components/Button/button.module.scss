@@ -1,0 +1,43 @@
+@import '../../style/vars.scss';
+@import '../../style/templates.scss';
+
+.card__button{
+    font-size: 1rem;
+    padding: 3%;
+    color: white;
+    background-color: $main-color;
+    border-style: none;
+    border-radius: 25px;
+    width: fit-content;
+}
+.card__button:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+.btn__leftarrow,
+.btn__rightarrow {
+    background-image: url(../../assets/icons/arrow.png);
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 0;
+    align-self: center;
+
+    opacity: 0.5;
+}
+.btn__leftarrow {
+    margin-left: 30%;
+}
+.btn__rightarrow {
+    margin-right: 30%;
+    transform: rotate(180deg);
+}
+.btn__leftarrow:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+.btn__rightarrow:hover {
+    opacity: 1;
+    transform: scale(1.1) rotate(180deg);
+}

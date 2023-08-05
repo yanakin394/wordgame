@@ -1,4 +1,4 @@
-import wordsArr from '../data/words.json';
+import wordsArr from '../../data/words.json';
 import style from './Table.module.scss';
 import editBtn from '../../assets/icons/edit.png';
 import deleteBtn from '../../assets/icons/delete.png';
