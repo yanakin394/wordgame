@@ -1,10 +1,10 @@
-import Words from '../../components/Words';
+import words from '../../data/words.json';
+import WordCards from '../../components/WordCards/WordCards';
 
 function Game() {
-    return (
-        <div className="game__container">
-            
-        </div>
+    /* const [cardIndex, setCardIndex] = useState(); */
+    return ( 
+        <WordCards wordList={words}/>
     );
 }
 

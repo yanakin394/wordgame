@@ -1,7 +1,6 @@
 import Table from './pages/Table/Table';
+import Game from './pages/Game/Game';
 import Header from './components/Header/Header';
-import Card from './components/Card/Card';
-import Words from './components/Words/Words';
 import './style/App.scss';
 import Home from './pages/Home/Home';
 
@@ -13,7 +12,7 @@ function App() {
       </header> 
       <main>
         <Home/>
-        <Words/>
+        <Game/>
         <Table/>
       </main>
     </div>

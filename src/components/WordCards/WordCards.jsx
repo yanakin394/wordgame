@@ -1,14 +1,14 @@
+import { useState } from 'react';
 import Card from '../Card/Card';
-import wordsArr from '../../data/words.json';
 
-function Words() {
+function WordCards(props) {
     return (
         <div className='words__container'>
-            {wordsArr.map((wordItem, index) =>
+            {props.wordList.map((wordItem, index) =>
             <Card key={index} english={wordItem.english} transcription={wordItem.transcription} russian={wordItem.russian}/>
             )}
         </div>
     );
 }
 
-export default Words;
+export default WordCards;
