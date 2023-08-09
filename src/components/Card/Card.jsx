@@ -9,7 +9,7 @@ export default function Card(props) {
     }
     return (        
         <div className={style.card}>
-            <Button side='btn__leftarrow'/>
+            {/* <Button side='btn__leftarrow'/> */}
             <div className={style.card__wrapper}>
                 <div className={style.card__word}>
                     <p className={style.card__word}>{props.english}</p>
@@ -17,7 +17,7 @@ export default function Card(props) {
                 </div>
             {clicked ? <p className={style.card__translation}>{props.russian}</p> : <button className={style.card__button} onClick={handleClick}>Проверить</button>}                     
             </div>
-            <Button side='btn__rightarrow'/>
+            {/* <Button side='btn__rightarrow'/> */}
         </div>       
     );
 }
