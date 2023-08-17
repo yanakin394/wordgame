@@ -2,6 +2,7 @@ import words from '../../data/words.json';
 import WordCards from '../../components/WordCards/WordCards';
 import { useState } from 'react';
 import Button from '../../components/Button/Button';
+import Loader from '../../components/Loader/Loader';
 import style from '../Game/Game.module.scss';
 
 function Game() {    
@@ -9,10 +10,16 @@ function Game() {
     const handleBack = () => {
         setCardIndex(cardIndex - 1);
     }
+
     const handleForward = () => {
         setCardIndex(cardIndex + 1);
     }
-    console.log(cardIndex);
+    
+    if(cardIndex === undefined) {  //лоадер если карточки не подгружаются
+        return (  
+            <Loader/>
+        )
+    }
     return ( 
         <div className={style.container}>
             <Button side={cardIndex === 0 ? 'btn__leftarrow-disabled' : 'btn__leftarrow'} onClick={() => handleBack()} disabled={cardIndex === 0}/>
