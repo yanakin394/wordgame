@@ -1,22 +1,24 @@
-import { useState } from 'react';
-import Card from '../Card/Card';
+import style from '../WordCards/style.module.scss';
+import { useEffect, useState } from 'react';
 
-function WordCards(props) {
+export default function WordCards(props) {
+    const [clicked, setClicked] = useState(false);
+    console.log(props.currentIndex);
+    useEffect(() => {
+        setClicked(false);
+    }, [props.currentIndex])
+    const handleClick = () => {
+        setClicked(!clicked);
+    }
     return (        
-        <div className='words__container'>
-            <Card key={props.index}
-                english={props.wordList[props.currentIndex].english}
-                transcription={props.wordList[props.currentIndex].transcription}
-                russian={props.wordList[props.currentIndex].russian}
-            />
-        </div>
+        <div className={style.card}>
+            <div className={style.card__wrapper}>
+                <div className={style.card__word}>
+                    <p className={style.card__word}>{props.wordList[props.currentIndex].english}</p>
+                    <p className={style.card__transcription}>{props.wordList[props.currentIndex].transcription}</p>
+                </div>
+            {clicked ? <p className={style.card__translation}>{props.wordList[props.currentIndex].russian}</p> : <button className={style.card__button} onClick={handleClick}>Проверить</button>}
+            </div>
+        </div>       
     );
 }
-
-export default WordCards;
-
-/* <div className='words__container'>
-            {props.wordList.map((wordItem, index) =>
-            <Card key={index} english={wordItem.english} transcription={wordItem.transcription} russian={wordItem.russian}/>
-            )}
-        </div> */

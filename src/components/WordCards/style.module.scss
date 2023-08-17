@@ -1,11 +1,11 @@
+
 @import '../../style/vars.scss';
 @import '../../style/templates.scss';
-/* .card{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-} */
+.card{
+    grid-column: 2;
+}
 .card__wrapper{
+    
     background-color: rgb(202, 252, 235);
     margin: 2rem auto;
     width: 400px;
@@ -35,7 +35,8 @@
     font-size: 3rem;
 }
 .card__button{
-    font-size: 1rem;
+    @include txt-style;
+    font-size: 1.5rem;
     padding: 3%;
     color: white;
     background-color: $main-color;

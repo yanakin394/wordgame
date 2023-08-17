@@ -4,23 +4,20 @@ import { useState } from 'react';
 import Button from '../../components/Button/Button';
 import style from '../Game/Game.module.scss';
 
-function Game(props) {    
-    console.log(props.index);
-    const [cardIndex, setCardIndex] = useState(1);
+function Game() {    
+    const [cardIndex, setCardIndex] = useState(0);
     const handleBack = () => {
         setCardIndex(cardIndex - 1);
-        console.log(cardIndex);
     }
     const handleForward = () => {
         setCardIndex(cardIndex + 1);
-        console.log(cardIndex);
     }
     console.log(cardIndex);
     return ( 
         <div className={style.container}>
-            <Button side='btn__leftarrow' onClick={() => handleBack} disabled={cardIndex === 0}/>
+            <Button side={cardIndex === 0 ? 'btn__leftarrow-disabled' : 'btn__leftarrow'} onClick={() => handleBack()} disabled={cardIndex === 0}/>
             <WordCards wordList={words} currentIndex={cardIndex}/>
-            <Button side='btn__rightarrow' onClick={() => handleForward} disabled={cardIndex === words.length - 1}/> 
+            <Button side={cardIndex === words.length - 1 ? 'btn__rightarrow-disabled' : 'btn__rightarrow'} onClick={() => handleForward()} disabled={cardIndex === words.length - 1}/> 
         </div>
         
     );

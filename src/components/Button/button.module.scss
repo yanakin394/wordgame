@@ -13,19 +13,28 @@
     opacity: 0.5;
 }
 .btn__leftarrow {
-    margin-left: 30%;
-    margin-right: 5%;
+    justify-self: flex-end;
+    grid-column: 1;
 }
 .btn__rightarrow {
-    margin-left: 5%;
-    margin-right: 30%;
+    grid-column: 3;
     transform: rotate(180deg);
 }
 .btn__leftarrow:hover{
     opacity: 1;
     transform: scale(1.1);
 }
+.btn__leftarrow-disabled,
+.btn__rightarrow-disabled {
+    display: none;
+}
 .btn__rightarrow:hover {
     opacity: 1;
     transform: scale(1.1) rotate(180deg);
+}
+.btn__leftarrow:active {
+    transform: scale(0.90);
+}
+.btn__rightarrow:active {
+    transform: scale(0.90) rotate(180deg);
 }

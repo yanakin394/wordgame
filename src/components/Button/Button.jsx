@@ -1,12 +1,9 @@
 import style from './button.module.scss';
 
-function Button(props) {
+function Button({onClick, side, ...rest}) {
     return (        
-        <button className={style[props.side]}></button>
+        <button className={style[side]} onClick={onClick} {...rest}></button>
     );
 }
 
 export default Button;
-
-
-{/* <button className={style.card__leftarrow}></button> */}
