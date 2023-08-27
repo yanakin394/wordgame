@@ -1,11 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import style from './Header.module.scss'
 
 function Header() {
     return (
         <div className={style.header__wrapper}>
             <div className={style.header__title_wrapper}>
-                <h1 className={style.header__title}>Flip & Learn</h1>
+                <Link to='/' className={style.header__title}>Flip & Learn</Link>
                 <h2 className={style.header__motto}>Учи слова быстрее...</h2>
             </div>
             <nav className={style.nav}>
