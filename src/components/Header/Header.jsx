@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import style from './Header.module.scss'
 
 function Header() {
@@ -9,9 +10,9 @@ function Header() {
             </div>
             <nav className={style.nav}>
                 <ul className={style.nav__list}>
-                    <li className={style.nav__item}>Главная</li>
-                    <li className={style.nav__item_game}>Играть в карточки</li>
-                    <li className={style.nav__item}>Список слов</li>
+                    <NavLink to='/' className={style.nav__item}>Главная</NavLink>
+                    <NavLink to='/game' className={style.nav__item_game}>Играть в карточки</NavLink>
+                    <NavLink to='/table' className={style.nav__item}>Список слов</NavLink>
                 </ul>
             </nav>
         </div>        
@@ -20,3 +21,11 @@ function Header() {
 }
 
 export default Header;
+
+{/* <nav className={style.nav}>
+                <ul className={style.nav__list}>
+                    <li className={style.nav__item}>Главная</li>
+                    <li className={style.nav__item_game}>Играть в карточки</li>
+                    <li className={style.nav__item}>Список слов</li>
+                </ul>
+            </nav> */}
