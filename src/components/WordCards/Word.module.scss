@@ -2,6 +2,7 @@
 @import '../../style/vars.scss';
 @import '../../style/templates.scss';
 .card{
+    margin-top: 25%;
     grid-column: 2;
 }
 .card__wrapper{
@@ -49,5 +50,17 @@
     opacity: 0.8;
 }
 .card__button:active {
-    transform: scale(0.90);
+    /* transform: scale(0.90); */
+    transform: translateY(3px);
+}
+.card__button:focus {
+    outline: none;
+    transform: scale(1.1);
+    border: 2px solid #ffffff;
+}
+.card__result {
+    margin-top: 15%;
+    text-align: center;
+    @include txt-style;
+    font-size: 2em;
 }

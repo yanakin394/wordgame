@@ -1,6 +1,6 @@
 import words from '../../data/words.json';
 import WordCards from '../../components/WordCards/WordCards';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Button from '../../components/Button/Button';
 import Loader from '../../components/Loader/Loader';
 import style from '../Game/Game.module.scss';
