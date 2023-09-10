@@ -1,16 +1,17 @@
 import style from '../WordCards/Word.module.scss';
-import { useEffect, useState, useRef, forwardRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function WordCards(props) {
     const btnRef = useRef(null);                   //создала реф для кнопки Перевести
     useEffect(()=> {
         btnRef.current.focus();
     }, [])
+
     const [clicked, setClicked] = useState(false);
-    console.log(props.currentIndex);
     useEffect(() => {
         setClicked(false);
     }, [props.currentIndex])
+
     const handleClick = () => {
         setClicked(!clicked);
     }
@@ -23,6 +24,7 @@ export default function WordCards(props) {
                 </div>
             {clicked ? <p className={style.card__translation}>{props.wordList[props.currentIndex].russian}</p> : <button className={style.card__button} ref={btnRef} onClick={handleClick}>Проверить</button>}
             </div>
+            {<p>Вы выучили {props.handleWordResult} слов.</p>}
         </div>       
     );
 }

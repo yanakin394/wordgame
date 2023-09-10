@@ -1,6 +1,6 @@
 import words from '../../data/words.json';
 import WordCards from '../../components/WordCards/WordCards';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import Button from '../../components/Button/Button';
 import Loader from '../../components/Loader/Loader';
 import style from '../Game/Game.module.scss';
@@ -15,15 +15,20 @@ function Game() {
         setCardIndex(cardIndex + 1);
     }
     
-    if(cardIndex === undefined) {  //лоадер если карточки не подгружаются
+    if(cardIndex === undefined) {                   //лоадер если карточки не подгружаются
         return (  
             <Loader/>
         )
     }
+    //колбэк функция для отображения кол-ва изученных слов
+    const [wordResult, setWordResult] = useState(0);
+    const handleWordResult = () => {
+        setWordResult(wordResult + 1);
+    }
     return ( 
         <div className={style.container}>
             <Button side={cardIndex === 0 ? 'btn__leftarrow-disabled' : 'btn__leftarrow'} onClick={() => handleBack()} disabled={cardIndex === 0}/>
-            <WordCards wordList={words} currentIndex={cardIndex}/>
+            <WordCards wordList={words} currentIndex={cardIndex} wordResult={handleWordResult}/>
             <Button side={cardIndex === words.length - 1 ? 'btn__rightarrow-disabled' : 'btn__rightarrow'} onClick={() => handleForward()} disabled={cardIndex === words.length - 1}/> 
         </div>
         
