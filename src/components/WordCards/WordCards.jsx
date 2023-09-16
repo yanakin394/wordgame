@@ -1,4 +1,4 @@
-import style from '../WordCards/Word.module.scss';
+import style from '../WordCards/WordCards.module.scss';
 import { useEffect, useState, useRef } from 'react';
 
 export default function WordCards(props) {
@@ -14,7 +14,17 @@ export default function WordCards(props) {
 
     const handleClick = () => {
         setClicked(!clicked);
+        props.handleWordResult();           //передаю функцию для получения результата выученных слов
+        
     }
+    let result;
+    if (props.learnedWords === 1 || 0) {                                    //условие для склонения слова СЛОВО
+        result = <p className={style.card__result}>Вы выучили {props.learnedWords} слово.</p>;
+        } if (props.learnedWords === 2 || 3 || 4) {
+            result = <p className={style.card__result}>Вы выучили {props.learnedWords} слова.</p>;
+            } else {
+                result = <p className={style.card__result}>Вы выучили {props.learnedWords} слов.</p>;
+            }
     return (        
         <div className={style.card}>
             <div className={style.card__wrapper}>
@@ -24,7 +34,8 @@ export default function WordCards(props) {
                 </div>
             {clicked ? <p className={style.card__translation}>{props.wordList[props.currentIndex].russian}</p> : <button className={style.card__button} ref={btnRef} onClick={handleClick}>Проверить</button>}
             </div>
-            {<p>Вы выучили {props.handleWordResult} слов.</p>}
+            {result}
         </div>       
     );
 }
+//{<p className={style.card__result}>Вы выучили {props.learnedWords} слов.</p>}
