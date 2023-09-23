@@ -15,12 +15,12 @@ export default function WordCards(props) {
     const handleClick = () => {
         setClicked(!clicked);
         props.handleWordResult();           //передаю функцию для получения результата выученных слов
-        
+        console.log('learned words' + props.learnedWords);
     }
     let result;
-    if (props.learnedWords === 1 || 0) {                                    //условие для склонения слова СЛОВО
+    if (props.learnedWords === 1) {                                    //условие для склонения слова СЛОВО
         result = <p className={style.card__result}>Вы выучили {props.learnedWords} слово.</p>;
-        } if (props.learnedWords === 2 || 3 || 4) {
+        } else if (props.learnedWords === 2 || 3 || 4) {
             result = <p className={style.card__result}>Вы выучили {props.learnedWords} слова.</p>;
             } else {
                 result = <p className={style.card__result}>Вы выучили {props.learnedWords} слов.</p>;
@@ -38,4 +38,3 @@ export default function WordCards(props) {
         </div>       
     );
 }
-//{<p className={style.card__result}>Вы выучили {props.learnedWords} слов.</p>}

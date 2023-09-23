@@ -24,7 +24,9 @@ function Game() {
     //колбэк функция для отображения кол-ва изученных слов    
     const handleWordResult = () => {
         setWordResult(wordResult + 1);
+        console.log('wordresult' + ' ' + wordResult);
     }
+    console.log('wordresult2' + ' ' + wordResult)
     return ( 
         <div className={style.container}>
             <Button side={cardIndex === 0 ? 'btn__leftarrow-disabled' : 'btn__leftarrow'} onClick={() => handleBack()} disabled={cardIndex === 0}/>
