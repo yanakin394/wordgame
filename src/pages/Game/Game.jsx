@@ -1,11 +1,14 @@
-import words from '../../data/words.json';
-import WordCards from '../../components/WordCards/WordCards';
-import { useState } from 'react';
+/* import words from '../../data/words.json'; */
+import { useState, useContext } from 'react';
 import Button from '../../components/Button/Button';
+import WordCards from '../../components/WordCards/WordCards';
 import Loader from '../../components/Loader/Loader';
 import style from '../Game/Game.module.scss';
+import { WordsContext } from '../../context/WordsContext';
 
-function Game() {    
+function Game() {   
+    const {words, setWords} = useContext(WordsContext); //вытаскиваем контекст из апи
+    console.log(words);
     const [cardIndex, setCardIndex] = useState(0);
     const [wordResult, setWordResult] = useState(0);
     const handleBack = () => {

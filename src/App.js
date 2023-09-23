@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import {Home, Table, Error, Game} from './pages';
-
 import './style/App.scss';
 
 function App() {
-  return (
+  
+  return (    
     <div className="App">
       <Router>
         <header>
